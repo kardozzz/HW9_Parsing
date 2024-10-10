@@ -3,18 +3,17 @@ package utils;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 
 public class JsonParser {
 
-    private ObjectMapper objectMapper = new ObjectMapper();  // Создаем ObjectMapper
-
-    public <T> T fromJsonFile(String filePath, Class<T> valueType) throws IOException {
-        // Парсинг JSON файла в объект указанного типа
-        return objectMapper.readValue(new File(filePath), valueType);
-    }
+    private ObjectMapper objectMapper = new ObjectMapper();
 
     public <T> void toJsonFile(String filePath, T object) throws IOException {
-        // Сериализация объекта в JSON и запись в файл
         objectMapper.writeValue(new File(filePath), object);
+    }
+
+    public <T> T fromJson(InputStream inputStream, Class<T> valueType) throws IOException {
+        return objectMapper.readValue(inputStream, valueType);
     }
 }

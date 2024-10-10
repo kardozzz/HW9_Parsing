@@ -1,3 +1,5 @@
+package model;
+
 public class Fruit {
     private String fruit;
     private String size;
