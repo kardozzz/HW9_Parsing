@@ -6,7 +6,7 @@ import model.Fruit;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class JsonParserTeast {
+public class JsonParserTest {
     utils.JsonParser jsonParser = new utils.JsonParser();
 
     @Test
@@ -25,7 +25,7 @@ public class JsonParserTeast {
             assertEquals("Large", fruit.getSize());
             assertEquals("Red", fruit.getColor());
 
-            // Вывод объекта на экран
+
             System.out.println(fruit);
 
         } catch (Exception e) {
